@@ -31,7 +31,9 @@ io.on("connection", (socket) => {
     });
 });
 
-
+app.get('/', (req, res) => {
+    res.send('backend');
+  });
 server.listen(3001, () => {
     console.log("SERVER RUNNING");
 })
