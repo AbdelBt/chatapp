@@ -24,23 +24,33 @@ function Chat({ socket, username, room }) {
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
+    const handleMessage = (data) => {
       setMessageList((list) => [...list, data]);
-    });
+      console.log(data);
+    };
+  
+    // Attach event listener
+    socket.on("receive_message", handleMessage);
+  
+    // Cleanup function to remove event listener
+    return () => {
+      socket.off("receive_message", handleMessage);
+    };
   }, [socket]);
 
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <p>Live Chat</p>
+        <p>Hazqa Chat</p>
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
+          {messageList.map((messageContent,index) => {
             return (
               <div
+                key={index}
                 className="message"
-                id={username === messageContent.author ? "you" : "other"}
+                id={username === messageContent.author ? "other" : "you"}
               >
                 <div>
                   <div className="message-content">
@@ -62,7 +72,7 @@ function Chat({ socket, username, room }) {
         <input
           type="text"
           value={currentMessage}
-          placeholder="Hey..."
+          placeholder="Ecrit alhmar..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
