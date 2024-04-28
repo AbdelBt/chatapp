@@ -29,13 +29,17 @@ function App() {
         setUsername(event.target.value)
       }}
       />
-         <input 
-      type="text" 
-      placeholder="Cama..." 
-      onChange={(event) => { 
-        setRoom(event.target.value)
-      }}
-      />
+       <select 
+    value={room} 
+    onChange={(event) => setRoom(event.target.value)}
+  >
+    <option value="">khtar cama alhmara</option>
+    <option value="room1">cama 1</option>
+    <option value="room2">cama 2</option>
+    <option value="room3">cama 3</option>
+    {/* Ajoutez autant d'options que nécessaire */}
+  </select>
+  
         <button onClick={joinRoom}> go in cama</button>
         </div>
        ) : (
