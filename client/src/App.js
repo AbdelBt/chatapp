@@ -21,10 +21,10 @@ function App() {
 
       {!showChat ? (
        <div className= "joinChatContainer" >
-        <h3> Join a room =D</h3>
+        <h3> Join a room </h3>
       <input 
       type="text" 
-      placeholder="Niggeh..." 
+      placeholder="Username" 
       onChange={(event) => { 
         setUsername(event.target.value)
       }}
@@ -33,14 +33,13 @@ function App() {
     value={room} 
     onChange={(event) => setRoom(event.target.value)}
   >
-    <option value="">khtar cama alhmara</option>
-    <option value="room1">cama 1</option>
-    <option value="room2">cama 2</option>
-    <option value="room3">cama 3</option>
-    {/* Ajoutez autant d'options que nécessaire */}
+    <option value="">Choice a room </option>
+    <option value="room1">ROOM 1</option>
+    <option value="room2">ROOM 2</option>
+    <option value="room3">ROOM 3</option>
   </select>
   
-        <button onClick={joinRoom}> go in cama</button>
+        <button onClick={joinRoom}> start chatting</button>
         </div>
        ) : (
         <Chat socket={socket} username={username} room={room}/>
