@@ -6,7 +6,6 @@ A real-time chat application built with React.js for the frontend and Node.js fo
 
 - **Real-Time Messaging:** Instant messaging using WebSockets with Socket.IO.
 - **User Authentication:** Simple user authentication to join chat rooms.
-- **Multiple Chat Rooms:** Users can create and join different chat rooms.
 - **Responsive Design:** A user-friendly interface that works on various devices.
 
 ## Technologies Used
