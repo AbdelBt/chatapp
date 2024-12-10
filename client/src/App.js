@@ -20,31 +20,31 @@ function App() {
     <div className="App">
 
       {!showChat ? (
-       <div className= "joinChatContainer" >
-        <h3> Join a room </h3>
-      <input 
-      type="text" 
-      placeholder="Username" 
-      onChange={(event) => { 
-        setUsername(event.target.value)
-      }}
-      />
-       <select 
-    value={room} 
-    onChange={(event) => setRoom(event.target.value)}
-  >
-    <option value="">Choice a room </option>
-    <option value="room1">ROOM 1</option>
-    <option value="room2">ROOM 2</option>
-    <option value="room3">ROOM 3</option>
-  </select>
-  
-        <button onClick={joinRoom}> start chatting</button>
+        <div className="joinChatContainer" >
+          <h3> Join a room </h3>
+          <input
+            type="text"
+            placeholder="Username"
+            onChange={(event) => {
+              setUsername(event.target.value)
+            }}
+          />
+          <select
+            value={room}
+            onChange={(event) => setRoom(event.target.value)}
+          >
+            <option value="">Select a room </option>
+            <option value="room1">ROOM 1</option>
+            <option value="room2">ROOM 2</option>
+            <option value="room3">ROOM 3</option>
+          </select>
+
+          <button onClick={joinRoom}> start chatting</button>
         </div>
-       ) : (
-        <Chat socket={socket} username={username} room={room}/>
-        )}
-                    <div className="background-image"></div>
+      ) : (
+        <Chat socket={socket} username={username} room={room} />
+      )}
+      <div className="background-image"></div>
 
     </div>
   );

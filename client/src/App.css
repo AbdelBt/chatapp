@@ -6,7 +6,10 @@
   font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
-
+  background-image: url(../public/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .background-image {
   position: absolute;
@@ -14,11 +17,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../public/goku.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.6; /* Ajustez l'opacité selon vos préférences */
+  background-color: black;
+  opacity: 0.6;
+  z-index: -99 ;
 }
 .joinChatContainer,
 .chatContainer {
@@ -37,64 +38,77 @@ body {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  background-color: rgb(41, 41, 41);
+  border: #263238 solid 1px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1;
 }
+
 
 .joinChatContainer h3 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #000000;
+  color: #fff;
 }
-.joinChatContainer input {
-  width: 210px;
+
+.joinChatContainer input,
+.joinChatContainer select,
+.joinChatContainer button {
+  width: 220px;
   height: 40px;
-  margin: 7px;
-  border: 2px solid #43a047;
-  border-radius: 5px;
-  padding: 5px;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 10px;
   font-size: 16px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+
+.joinChatContainer input,
+.joinChatContainer select {
+  background-color: #f1f1f1;
 }
 
 .joinChatContainer button {
-  width: 225px;
-  height: 50px;
-  margin: 7px;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-  background: #43a047;
-  color: #fff;
+  background-color: #43a047;
+  color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .joinChatContainer button:hover {
-  background: #2e7d32;
+  background-color: #2e7d32;
 }
 
 .chat-window {
   width: 100vw;
+  max-width: 600px;
+  height: 80vh;
+  background: #f4f4f4;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   z-index: 1;
-  padding-top: 20px;
-
+  position: relative;
 }
 
 .chat-window p {
   margin: 0;
 }
-.chat-window .chat-header {
-  height: 45px;
-  border-radius: 6px;
+.chat-header {
+  height: 60px;
   background: #263238;
-  position: relative;
-  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
 }
-.chat-window .chat-header p {
-  display: block;
-  padding: 0 1em 0 2em;
-  color: #fff;
-  font-weight: 700;
-  line-height: 45px;
-}
+
 
 .chat-window .chat-body {
   height: 80vh;
@@ -102,6 +116,11 @@ body {
   background: #fff;
   position: relative;
   z-index: 1;
+  background-image: url(../public/goku.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 .chat-window .chat-body .message-container {
   width: 100%;
@@ -212,4 +231,11 @@ body {
 }
 .hide {
   opacity: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .App{
+    background-size: cover;
+
+  }
 }
